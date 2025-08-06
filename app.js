@@ -107,7 +107,7 @@ let veryOldInventors = [];
 // Complete the exercise in the space below:
 veryOldInventors = inventors.filter(inventor => inventor.year >= 1500 && inventor.year <= 1599);
 
-// Check your work:
+
 console.log('Exercise 1 my result: ', veryOldInventors);
 console.log('Exercise 1 correct result: ', [
   { first: 'Galileo', last: 'Galilei', year: 1564, passed: 1642 },
@@ -139,7 +139,7 @@ inventorNames = inventors.map(inventor => ({
     last: inventor.last
 }));
 
-// Check your work:
+
 console.log('Exercise 2 my result: ', inventorNames);
 console.log('Exercise 2 correct result: ', [
   { first: 'Albert', last: 'Einstein' },
@@ -169,7 +169,7 @@ let sortedByBirthYear = [];
 // Complete the exercise in the space below:
 sortedByBirthYear = inventors.sort((a, b) => a.year - b.year);
 
-// Check your work:
+
 console.log('Exercise 3 my result: ', sortedByBirthYear);
 console.log('Exercise 3 correct result: ', [
   { first: 'Nicolaus', last: 'Copernicus', year: 1473, passed: 1543 },
@@ -186,4 +186,122 @@ console.log('Exercise 3 correct result: ', [
   { first: 'Katherine', last: 'Blodgett', year: 1898, passed: 1979 },
 ]);
 
+///////////////////////////
 
+/* 
+Exercise 4: Array.prototype.find()
+
+Use Array.prototype.find() to identify the inventor with the first name 'Ada' 
+from an array of inventor objects
+
+- You have an array of objects, each representing an inventor with various 
+  properties including their first name.
+- Utilize the Array.prototype.find() method to locate the object for the 
+  inventor with the first name 'Ada'.
+- Assign the found inventor object to the variable inventorNamedAda
+*/
+
+let inventorNamedAda = {};
+
+// Complete the exercise in the space below:
+inventorNamedAda = inventors.find(inventor => inventor.first === 'Ada');
+
+
+console.log('Exercise 4 my result: ', inventorNamedAda);
+console.log('Exercise 4 correct result: ', {
+  first: 'Ada',
+  last: 'Lovelace',
+  year: 1815,
+  passed: 1852,
+});
+
+////////////////////////
+/*
+Exercise 5: Array.prototype.map()
+
+Use the Array.prototype.map() method to reformat each name in the 'people' 
+array. The goal is to convert names from "Last, First" format to "First Last" 
+format.
+
+Hint: Use the String.prototype.split() method to separate the first and last 
+      names. You can split the string using ', ' as the separator.
+      After splitting the names, rearrange them to the "First Last" format.
+*/
+
+let firstLast = [];
+
+// Complete the exercise in the space below:
+firstLast = people.map(person => {
+    const [last, first] = person.split(', ');
+    return `${first} ${last}`;
+});
+
+
+console.log('Exercise 5 my result: ', firstLast);
+console.log('Exercise 5 correct result: ', [
+  'Carl Becker',
+  'Samuel Beckett',
+  'Mick Beddoes',
+  'Henry Beecher',
+  'Ludwig Beethoven',
+  'Menachem Begin',
+  'Hilaire Belloc',
+  'Saul Bellow',
+  'Robert Benchley',
+  'Peter Benenson',
+  'David Ben-Gurion',
+  'Walter Benjamin',
+  'Tony Benn',
+  'Chester Bennington',
+  'Leana Benson',
+  'Silas Bent',
+  'Lloyd Bentsen',
+  'Ric Berger',
+  'Ingmar Bergman',
+  'Luciano Berio',
+  'Milton Berle',
+  'Irving Berlin',
+  'Eric Berne',
+  'Sandra Bernhard',
+  'Yogi Berra',
+  'Halle Berry',
+  'Wendell Berry',
+  'Erin Bethea',
+  'Aneurin Bevan',
+  'Ken Bevel',
+  'Joseph Biden',
+  'Ambrose Bierce',
+  'Steve Biko',
+  'Josh Billings',
+  'Frank Biondo',
+  'Augustine Birrell',
+  'Elk Black',
+  'Robert Blair',
+  'Tony Blair',
+  'William Blake',
+]);
+
+////////////////////////
+
+/*
+Exercise 6: Array.prototype.some()
+
+Determine if there is at least one person in the devs array who is 18 years 
+old or older.
+
+- You have an array of people with their respective ages.
+- Use the Array.prototype.some() method to check if any person in the array is 
+  18 years old or older.
+- Store the result (true or false) in the variable 'isAdultPresent'. 
+*/
+
+let isAdultPresent = null;
+
+// Complete the exercise in the space below:
+isAdultPresent = devs.some(dev => dev.year >= 18);
+
+
+console.log('Exercise 6 my result: ', isAdultPresent);
+console.log('Exercise 6 correct result: ', true);
+
+ 
